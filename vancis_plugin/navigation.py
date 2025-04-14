@@ -1,5 +1,5 @@
 from netbox.plugins import PluginMenuButton, PluginMenuItem, PluginMenu
-from utilities.choices import ButtonColorChoices
+# from utilities.choices import ButtonColorChoices
 
 
 # CMDBNumber_buttons = [
@@ -16,7 +16,7 @@ SoftwarePackage_butons = [
         link='plugins:vancis_plugin:softwarepackage_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
-        color=ButtonColorChoices.GREEN
+        # color=ButtonColorChoices.GREEN
     )
 ]
 
@@ -25,7 +25,7 @@ StorageCluster_butons = [
         link='plugins:vancis_plugin:storagecluster_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
-        color=ButtonColorChoices.GREEN
+        # color=ButtonColorChoices.GREEN
     )
 ]
 StorageVolume_butons = [
@@ -33,7 +33,7 @@ StorageVolume_butons = [
         link='plugins:vancis_plugin:storagevolume_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
-        color=ButtonColorChoices.GREEN
+        # color=ButtonColorChoices.GREEN
     )
 ]
 
