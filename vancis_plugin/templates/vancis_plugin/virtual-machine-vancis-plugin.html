@@ -1,0 +1,21 @@
+{% load humanize %}
+{% load render_table from django_tables2 %}
+
+<div class="card card-default">
+    <div class="card-header">
+        <strong>Vancis Data</strong>
+    </div>
+
+    {% if vancispluginvm.CMDB.cmdb_number.cmdb_number %}
+        <div class="card-body table-responsive">
+            CMDB number: {{ vancispluginvm.CMDB.cmdb_number.cmdb_number }}
+        </div>
+    {% else %}
+        <div class="card-footer text-end noprint">
+            <a href="{% url 'plugins:vancis_plugin:virtualmachinedata_add' %}?virtual_machine={{ object.pk }}" class="btn btn-primary btn-sm">
+                <i class="mdi mdi-plus-thick" aria-hidden="true"></i>
+                Add CMDB
+            </a>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,45 @@
+{% extends 'generic/object.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col col-md-6">
+      <div class="card">
+        <h5 class="card-header">Storage Volume</h5>
+        <div class="card-body">
+          <table class="table table-hover attr-table">
+            <tr>
+              <th scope="row">Cluster</th>
+              <td>{{ object.storageCluster }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Volume ID</th>
+              <td>{{ object.volumeID }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Volume Name</th>
+              <td>{{ object.volName }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Total Size</th>
+              <td>{{ object.volSize }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Min IOPS</th>
+              <td>{{ object.minIOPS }}</td>
+            </tr>
+            <tr>
+              <th scope="row">SCSI NAA Device ID</th>
+              <td>{{ object.scsiNAADeviceID }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      {% include 'inc/panels/custom_fields.html' %}
+    </div>
+    <div class="col col-md-6">
+      {% include 'inc/panels/tags.html' %}
+      {% include 'inc/panels/comments.html' %}
+    </div>
+  </div>
+{% endblock content %}

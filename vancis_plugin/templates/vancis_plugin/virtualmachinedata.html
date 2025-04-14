@@ -1,0 +1,33 @@
+{% extends 'generic/object.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col col-md-6">
+      <div class="card">
+        <h5 class="card-header">Virtual Machine</h5>
+        <div class="card-body">
+          <table class="table table-hover attr-table">
+            <tr>
+                <th scope="row">CMDB_Number</th>
+                <td>
+                    <span><a href="{{ object.cmdb_number.get_absolute_url }}">{{ object.cmdb_number.cmdb_number }}</a></span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">VM</th>
+                <td>
+                    <span><a href="{{ object.virtual_machine.get_absolute_url }}">{{ object.virtual_machine.name }}</a></span>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      {% include 'inc/panels/custom_fields.html' %}
+    </div>
+    <div class="col col-md-6">
+      {% include 'inc/panels/tags.html' %}
+      {% include 'inc/panels/comments.html' %}
+    </div>
+  </div>
+{% endblock content %}
